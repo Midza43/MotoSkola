@@ -5,9 +5,9 @@
         </h2>
     </x-slot>
 
-    <!-- Container for demo purpose -->
+    
 <div class="container my-24 mx-auto md:px-6">
-  <!-- Section: Design Block -->
+  
   <section class="mb-32 text-center lg:text-left">
     <div
       class="block rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] white">
@@ -66,8 +66,6 @@ Pridružite nam se i doživite uzbuđenje vožnje na pravi način, uz podršku s
       </div>
     </div>
   </section>
-  <!-- Section: Design Block -->
 </div>
-<!-- Container for demo purpose -->
     
 </x-app-layout>

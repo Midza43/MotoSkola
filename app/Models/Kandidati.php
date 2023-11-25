@@ -21,6 +21,11 @@ class Kandidati extends Model
         'kategorijaPolaganja',
     ];
 
+    public function motor()
+    {
+        return $this->belongsTo(Motori::class, 'motor_id', 'id');
+    }
+
     protected $table = 'kandidati';
 
 }

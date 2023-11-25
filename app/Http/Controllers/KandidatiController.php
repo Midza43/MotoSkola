@@ -62,4 +62,5 @@ class KandidatiController extends Controller
         return redirect()->route('kandidati')->with('error', 'Kandidat uspješno izbrisan!');
         
     }
+
 }
