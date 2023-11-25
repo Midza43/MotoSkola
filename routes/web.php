@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\KandidatiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -23,7 +23,7 @@ Route::middleware(
         return view('dashboard');
     })->name('dashboard');
 
-    Route::get('kandidati', [CarController::class, 'index'] 
+    Route::get('kandidati', [KandidatiController::class, 'index'] 
             
         )->name('kandidati');
     

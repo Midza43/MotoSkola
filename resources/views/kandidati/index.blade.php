@@ -1,14 +1,16 @@
 <x-app-layout>
     <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('Pocetna') }}
+            {{ __('Kandidati') }}
         </h2>
     </x-slot>
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
-                <x-welcome />
+                <div class="p-2">
+                    <h1 class="font-xl">Ovdje ce biti izlistani kandidati</h1>                    
+                </div>
             </div>
         </div>
     </div>
