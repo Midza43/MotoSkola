@@ -26,6 +26,21 @@ Route::middleware(
     Route::get('kandidati', [KandidatiController::class, 'index'] 
             
         )->name('kandidati');
+    Route::get('/dodaj_kandidata', [KandidatiController::class, 'create'] 
+        
+    )->name('dodaj_kandidata');
+
+    Route::post('/dodaj_kandidate', [KandidatiController::class, 'dodaj_kandidate'] 
+        
+    )->name('dodaj_kandidate');
+
+
+    Route::get('/izmjeni_kandidata/{id}', [KandidatiController::class, 'izmjeni']
+    )->name('izmjeni_kandidata');
+    Route::delete('/izbrisi_kandidata/{id}', [KandidatiController::class, 'izbrisi']
+    )->name('izbrisi_kandidata');
+
+
     
 });
 

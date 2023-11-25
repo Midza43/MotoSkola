@@ -9,4 +9,15 @@ class Kandidati extends Model
 {
     public $timestamps = false;
     use HasFactory;
+
+    /**
+     * @var string[]
+     * 
+    */
+
+    protected $fillable = [
+        'imeiprezime',
+        'datumRodjenja',
+        'kategorijaPolaganja',
+    ];
 }

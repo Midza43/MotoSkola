@@ -13,4 +13,26 @@ class KandidatiController extends Controller
         $kandidati = DB::table('kandidati')->get();
         return view('kandidati.index', ['kandidati'=>$kandidati]);
     }
+
+    public function create(){
+        return view('kandidati.add');
+    }
+
+    public function dodaj_kandidate(Request $request){
+        $request->validate([
+            'imeprezime' => 'required|string|max:255',
+            'datumRodjenja' => 'required|date',
+            'kategorijaPolaganja' => 'required|string|max:255',
+        ]);
+    
+        DB::table('kandidati')->insert([
+            'imeprezime' => $request->imeprezime,
+            'datumRodjenja' => $request->datumRodjenja,
+            'kategorijaPolaganja' => $request->kategorijaPolaganja,
+        ]);
+    
+        return redirect()->route('kandidati')->with('success', 'Kandidat uspešno dodat!');
+    }
+    
+
 }
