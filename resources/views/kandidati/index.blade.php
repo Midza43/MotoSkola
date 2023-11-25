@@ -4,6 +4,14 @@
             {{ __('Kandidati') }}
         </h2>
     </x-slot>
+    
+    <div x-data="{ show: true }" x-show="show" x-init="setTimeout(() => show = false, 5000)"
+    class="alert max-w-xl mx-auto mt-2 text-center" :class="{ 'bg-green-100 border border-green-400 text-green-700': '{{ session('success') }}', 'bg-red-100 border border-red-400 text-red-700': '{{ session('error') }}' }" role="alert">
+        <span class="block sm:inline">{{ session('success') ?: session('error') }}</span>
+         <span class="absolute top-0 bottom-0 right-0 px-4 py-3 cursor-pointer" x-on:click="show = false">
+            </span>
+    </div>
+
 
     <h1 class="text-2xl font-bold py-5 text-center">SPISAK KANDIDATA</h1>
     <div class="flex justify-center items-center my-5">

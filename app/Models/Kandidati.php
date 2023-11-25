@@ -16,8 +16,11 @@ class Kandidati extends Model
     */
 
     protected $fillable = [
-        'imeiprezime',
+        'imeprezime',
         'datumRodjenja',
         'kategorijaPolaganja',
     ];
+
+    protected $table = 'kandidati';
+
 }
