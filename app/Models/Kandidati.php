@@ -26,6 +26,11 @@ class Kandidati extends Model
         return $this->belongsTo(Motori::class, 'motor_id', 'id');
     }
 
+    public function instruktor()
+    {
+        return $this->belongsTo(Instruktori::class, 'instruktor_id', 'id');
+    }
+
     protected $table = 'kandidati';
 
 }

@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KandidatiController;
 use App\Http\Controllers\MotoriController;
+use App\Http\Controllers\InstruktoriController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -31,6 +32,14 @@ Route::middleware(
     Route::get('motori', [MotoriController::class, 'index'] 
             
         )->name('motori');
+
+    Route::get('instruktori', [InstruktoriController::class, 'index'] 
+            
+        )->name('instruktori');
+
+    Route::post('/instruktori', [InstruktoriController::class, 'dodjelaKandidata']
+    
+        )->name('dodjela.kandidata');
 
     Route::get('/dodaj_kandidata', [KandidatiController::class, 'create'] 
         

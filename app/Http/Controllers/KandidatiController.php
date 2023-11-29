@@ -18,6 +18,11 @@ class KandidatiController extends Controller
         return view('kandidati.add');
     }
 
+    public function instruktor()
+    {
+        return $this->belongsTo(Instruktor::class, 'instruktor_id');
+    }
+
     public function dodaj_kandidate(Request $zahtjev){
         $zahtjev->validate([
             'imeprezime' => 'required|string|max:255',
