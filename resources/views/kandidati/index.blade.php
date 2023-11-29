@@ -24,7 +24,7 @@
                     <th class="border border-slate-600 p-3 md:bg-gray-300 text-center">Ime i prezime</th>
                     <th class="border border-slate-600 p-3 md:bg-gray-300 text-center">Datum rođenja</th>
                     <th class="border border-slate-600 p-3 md:bg-gray-300 text-center">Kategorija polaganja</th>
-                    <th class="border border-slate-600 p-3 md:bg-gray-300 text-center">ID dodijeljenog instruktora</th>
+                    <th class="border border-slate-600 p-3 md:bg-gray-300 text-center">Dodijeljen instruktor</th>
                     <th class="border border-slate-600 p-3 md:bg-gray-300 text-center">Akcije</th> 
                 </tr>
             </thead>
@@ -35,12 +35,12 @@
                     <td class="border border-slate-700 p-3 text-center">{{$kandidat->datumRodjenja}}</td>  
                     <td class="border border-slate-700 p-3 text-blue-500 text-center">{{$kandidat->kategorijaPolaganja}}</td>
                     <td class="border border-slate-700 p-3 text-center">
-                        @if ($kandidat->instruktor_id !== null)
-                        {{ $kandidat->instruktor_id }}
+                        @if ($kandidat->instruktor_ime_prezime)
+                            {{ $kandidat->instruktor_ime_prezime }}
                         @else
-                        NIJE DODIJELJEN INSTRUKTOR
+                            NIJE DODIJELJEN INSTRUKTOR
                         @endif
-                    </td>   
+                    </td>  
                     <td class="border border-slate-700 p-3 text-center">
                         <a href="{{ route('izmjeni_kandidata', ['id' => $kandidat->id]) }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline">Uredi</a>
                         <form action="{{ route('izbrisi_kandidata', ['id' => $kandidat->id]) }}" method="POST" class="inline">

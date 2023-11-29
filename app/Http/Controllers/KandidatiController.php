@@ -10,7 +10,10 @@ class KandidatiController extends Controller
 {
     public function index()
     {
-        $kandidati = DB::table('kandidati')->get();
+        $kandidati = DB::table('kandidati')
+        ->leftJoin('instruktori', 'kandidati.instruktor_id', '=', 'instruktori.id')
+        ->select('kandidati.*', 'instruktori.ime_prezime as instruktor_ime_prezime')
+        ->get();
         return view('kandidati.index', ['kandidati'=>$kandidati]);
     }
 
