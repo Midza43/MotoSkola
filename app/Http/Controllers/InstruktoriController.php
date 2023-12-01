@@ -28,7 +28,16 @@ class InstruktoriController extends Controller
     {
         $instruktori = DB::table('instruktori')->get();
         $kandidati = DB::table('kandidati')->get();
-
+        if (request()->wantsJson()) {
+            return response()->json(['instruktori' => $instruktori]);
+        }
+        
         return view('instruktori.index', ['instruktori' => $instruktori, 'kandidati' => $kandidati]);
+        
+    }
+
+    public function show()
+    {
+        return Instruktori::all();
     }
 }
