@@ -14,6 +14,7 @@ class Instruktori extends Model
      * @var string[]
      */
     protected $fillable = [
+        'id',
         'ime_prezime',
         'broj_dodijeljenih_kandidata',
 

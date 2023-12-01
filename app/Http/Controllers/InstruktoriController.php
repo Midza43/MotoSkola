@@ -36,8 +36,10 @@ class InstruktoriController extends Controller
         
     }
 
-    public function show()
+
+    public function store(Request $request)
     {
-        return Instruktori::all();
+        error_log($request);
+        return Instruktori::create($request->all());
     }
 }
