@@ -42,4 +42,15 @@ class InstruktoriController extends Controller
         error_log($request);
         return Instruktori::create($request->all());
     }
+
+    public function update(Request $request, $id)
+    {
+        $instruktor = Instruktori::find($id);
+        $instruktor->update($request->all());
+        return $instruktor;
+    }
+    public function destroy($id)
+    {
+        return Instruktori::destroy($id);
+    }
 }
