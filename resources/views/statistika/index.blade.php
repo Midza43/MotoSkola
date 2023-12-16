@@ -12,7 +12,7 @@
             </span>
     </div>
 
-    <!-- Section: Design Block -->
+
 <section class="mb-32 text-center lg:text-left">
   <style>
     @media (min-width: 992px) {
@@ -21,17 +21,15 @@
       }
     }
 
-    /* These are the KEY styles - you can add them directly to any object you want in your project */
     .fancy-border-radius {
       border-radius: 53% 47% 52% 48% / 36% 41% 59% 64%;
     }
   </style>
 
-  <!-- Jumbotron -->
   <div class="container mx-auto text-center lg:text-left xl:px-32">
-    <div class="grid items-center lg:grid-cols-2">
+    <div class="grid items-center ">
       <div class="mb-12 lg:mb-0">
-        <div class="relative z-[1] block rounded-lg bg-[hsla(0,0%,100%,0.55)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-[hsla(0,0%,5%,0.55)] dark:shadow-black/20 md:px-12 lg:-mr-14 backdrop-blur-[30px]">        
+        <div class="relative z-[1] block rounded-lg bg-[hsla(0,0%,100%,0.55)] px-6 py-12 shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:shadow-black/20 md:px-12 lg:-mr-14 backdrop-blur-[30px]">        
           <div class="grid gap-x-6 md:grid-cols-3">
             <div class="mb-12 md:mb-0">
               <h2 class="text-dark mb-4 text-3xl font-bold">Najstariji kadnidat</h2>
