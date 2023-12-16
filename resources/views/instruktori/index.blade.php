@@ -12,7 +12,7 @@
             </span>
     </div>
 
-    <h1 class="text-2xl font-bold py-5 text-center">SPISAK Instruktora</h1>
+    <h1 class="text-2xl font-bold py-5 text-center">SPISAK INSTRUKTORA</h1>
     <div class="py-3 flex justify-center align-start md:bg-white-100">
         <table class="table md:bg-gray-100 border-collapse border border-slate-500 h-50">
             <thead>
@@ -34,7 +34,7 @@
 
     <div class="flex justify-center align-start py-5">
         <div class="py-3 mx-3 md:bg-white-100">
-            <h1 class="text-2xl font-bold py-5 text-center">Dodjela Kandidata</h1>
+            <h1 class="text-2xl font-bold py-5 text-center">DODJELA INSTRUKTORA</h1>
             <form action="{{ route('dodjela.kandidata') }}" method="post">
                 @csrf
                 <div class="mb-4">
@@ -56,7 +56,7 @@
                 </div>
 
                 <div class="mt-8">
-                    <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded">Dodjeli Kandidata</button>
+                    <button type="submit" class="bg-blue-500 text-white py-2 px-4 rounded">Dodjeli Instruktora</button>
                 </div>
             </form>
         </div>

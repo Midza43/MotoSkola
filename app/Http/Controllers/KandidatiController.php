@@ -13,7 +13,7 @@ class KandidatiController extends Controller
         $kandidati = DB::table('kandidati')
         ->leftJoin('instruktori', 'kandidati.instruktor_id', '=', 'instruktori.id')
         ->select('kandidati.*', 'instruktori.ime_prezime as instruktor_ime_prezime')
-        ->get();
+        ->paginate(10);
         return view('kandidati.index', ['kandidati'=>$kandidati]);
     }
 
