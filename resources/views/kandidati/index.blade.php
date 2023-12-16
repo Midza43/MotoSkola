@@ -24,6 +24,7 @@
                     <th class="border border-slate-600 p-3 text-center">Datum rođenja</th>
                     <th class="border border-slate-600 p-3 text-center">Kategorija polaganja</th>
                     <th class="border border-slate-600 p-3 text-center">Dodijeljen instruktor</th>
+                    <th class="border border-slate-600 p-3 text-center">Status</th>
                     <th class="border border-slate-600 p-3 text-center">Akcije</th> 
                 </tr>
             </thead>
@@ -37,7 +38,23 @@
                             @if ($kandidat->instruktor_ime_prezime)
                                 {{ $kandidat->instruktor_ime_prezime }}
                             @else
-                                NIJE DODIJELJEN INSTRUKTOR
+                                NIJE DODIJELJEN INSTRUKTOR!
+                            @endif
+                        </td>
+                        <td class="border border-slate-700 p-3 text-center @if ($kandidat->status == 2)
+                        bg-green-100
+                        @elseif ($kandidat->status == 1)
+                        bg-blue-100
+                        @else
+                        bg-yellow-100                      
+                        @endif
+                        ">
+                        @if ($kandidat->status == 0)
+                                ČEKA NA DODJELU INSTRUKTORA!
+                            @elseif ($kandidat->status == 1)
+                                NA OBUCI!
+                            @elseif ($kandidat->status == 2)
+                                ZAVRŠIO OBUKU!
                             @endif
                         </td>  
                         <td class="border border-slate-700 p-3 text-center">
@@ -46,6 +63,12 @@
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-2">Obriši</button>
+                            </form>
+                            <form action="{{ route('dodaj_fajl') }}" enctype="multipart/form-data" method="POST" class="inline">
+                                @csrf
+                                <input type="hidden" name="id" value="{{$kandidat->id}}">
+                                <input type="file" name="fajl" accept=".pdf">
+                                <button type="submit" class="bg-blue-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline ml-2">Dodaj fajl</button>
                             </form>
                         </td>  
                     </tr>

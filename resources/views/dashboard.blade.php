@@ -67,5 +67,23 @@ Pridružite nam se i doživite uzbuđenje vožnje na pravi način, uz podršku s
     </div>
   </section>
 </div>
+
+
+
+<!-- Dodajte ovo ispod postojećeg koda u vašem dashboard Blade pogledu -->
+<div class="flex justify-center align-start py-5">
+        <div class="py-3 mx-3 md:bg-white-100">
+        <h1 class="text-3xl font-bold mb-4">Vremenske Informacije (OpenWeatherMap API)</h1>
+        @if(isset($weatherData['main']['temp']))
+        <p class="text-lg mb-2 text-center">Opis vremena: {{ $weatherData['weather'][0]['description'] }}</p>
+    @endif
+
+    @if(isset($weatherData['weather'][0]['description']))
+        <p class="text-lg mb-2 text-center">Grad: {{ $weatherData['name'] }}</p>
+    @endif                  
+        
+    </div>
+</div>
+
     
 </x-app-layout>

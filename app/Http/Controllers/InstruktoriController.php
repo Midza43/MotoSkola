@@ -17,6 +17,7 @@ class InstruktoriController extends Controller
         if ($instruktor->kandidati()->count() < 3) {            
             $kandidat = Kandidati::findOrFail($kandidatId);
             $kandidat->instruktor()->associate($instruktor);
+            $kandidat->status = 1;
             $kandidat->save();
             return redirect()->back()->with('success', 'Kandidat uspješno dodijeljen instruktoru.');
         } else {

@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\KandidatiController;
 use App\Http\Controllers\MotoriController;
 use App\Http\Controllers\InstruktoriController;
+use App\Http\Controllers\StatistikaController;
+use App\Http\Controllers\WeatherController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,7 +24,10 @@ Route::middleware(
 )->group(function () {
 
     Route::get('/', function () {
-        return view('dashboard');
+        $weatherController = new WeatherController();
+        $weatherData = $weatherController->getWeather();
+        return view('dashboard',[
+            'weatherData' => $weatherData]);
     })->name('dashboard');
 
     Route::get('kandidati', [KandidatiController::class, 'index'] 
@@ -64,6 +69,14 @@ Route::middleware(
     Route::put('/azuriraj_kandidata/{id}', [KandidatiController::class, 'azuriraj']
         
         )->name('azuriraj_kandidata');
+
+    Route::post('/dodaj_fajl', [KandidatiController::class, 'dodaj_fajl']
+
+        )->name('dodaj_fajl');
+
+    Route::get('statistika', [StatistikaController::class, 'index'] 
+            
+        )->name('statistika');
 
 
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use DB;
 use App\Models\Kandidati;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 
 class KandidatiController extends Controller
@@ -68,6 +69,27 @@ class KandidatiController extends Controller
         Kandidati::destroy($id);
 
         return redirect()->route('kandidati')->with('error', 'Kandidat uspješno izbrisan!');
+        
+    }
+
+    public function dodaj_fajl(Request $zahtjev) { 
+        
+        $id=$zahtjev->id;
+        $kandidat = Kandidati::find($id);
+
+        $zahtjev->validate([
+            'fajl' => 'required|mimes:pdf|max:10000',  
+        ]);        
+        $folder = $kandidat->code;
+        $fajl = $zahtjev->file('fajl');
+        $imefajla = $kandidat->id . time() . '.' . $fajl->getClientOriginalExtension();
+        $putanja = $fajl->storeAs($folder,$imefajla);
+        $kandidat->status = 2;
+        $kandidat->save();
+
+        
+
+        return redirect()->route('kandidati')->with('success', 'Fajl uspjesno dodan!');
         
     }
 

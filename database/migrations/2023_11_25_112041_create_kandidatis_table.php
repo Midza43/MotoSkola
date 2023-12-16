@@ -17,6 +17,7 @@ return new class extends Migration
             $table->string('datumRodjenja');
             $table->string('kategorijaPolaganja');
             $table->string('instruktor.id');
+            $table->string('status');
         });
     }
 
