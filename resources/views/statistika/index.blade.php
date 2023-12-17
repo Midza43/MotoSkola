@@ -33,7 +33,7 @@
           <div class="grid gap-x-6 md:grid-cols-3">
             <div class="mb-12 md:mb-0">
               <h2 class="text-dark mb-4 text-3xl font-bold">Najstariji kadnidat</h2>
-              <h5 class="mb-0 text-lg font-medium text-neutral-500 dark:text-neutral-300">
+              <h5 class="mb-0 text-lg font-medium text-neutral-500 dark:text-neutral-700">
               {{$najstarijiKandidat->imeprezime}},
               {{$najstarijiKandidat->datumRodjenja}}
               </h5>
@@ -41,7 +41,7 @@
 
             <div class="mb-12 md:mb-0">
               <h2 class="text-dark mb-4 text-3xl font-bold">Najmađi kandidat</h2>
-              <h5 class="mb-0 text-lg font-medium text-neutral-500 dark:text-neutral-300">
+              <h5 class="mb-0 text-lg font-medium text-neutral-500 dark:text-neutral-700">
               {{$najmladjiKandidat->imeprezime}},
               {{$najmladjiKandidat->datumRodjenja}}
               </h5>
@@ -49,7 +49,7 @@
 
             <div class="mb-12 md:mb-0">
               <h2 class="text-dark mb-4 text-3xl font-bold">Kategorija sa najviše kandidata</h2>
-              <h5 class="mb-0 text-lg font-medium text-neutral-500 dark:text-neutral-300">
+              <h5 class="mb-0 text-lg font-medium text-neutral-500 dark:text-neutral-700">
               Kategorija <b>{{$najcescaKategorija->kategorijaPolaganja}}</b>,
               {{$najcescaKategorija->brojPolaganja}} kandidata
               </h5>
@@ -57,7 +57,7 @@
 
             <div class="mb-12 md:mb-0 mt-2">
               <h2 class="text-dark mb-4 text-3xl font-bold">Kategorija sa najmanje kandidata</h2>
-              <h5 class="mb-0 text-lg font-medium text-neutral-500 dark:text-neutral-300">
+              <h5 class="mb-0 text-lg font-medium text-neutral-500 dark:text-neutral-700">
               Kategorija <b>{{$minKategorija->kategorijaPolaganja}}</b>,
               {{$minKategorija->brojPolaganja}} kandidata
               </h5>
@@ -66,7 +66,7 @@
 
             <div class="mb-12 md:mb-0 mt-2">
               <h2 class="text-dark mb-4 text-3xl font-bold">Najmanje korišten motor</h2>
-              <h5 class="mb-0 text-lg font-medium text-neutral-500 dark:text-neutral-300">
+              <h5 class="mb-0 text-lg font-medium text-neutral-500 dark:text-neutral-700">
                 {{$proizvodjac_min}},
                 {{$model_min}}
               </h5>
@@ -74,7 +74,7 @@
 
             <div class="mb-12 md:mb-0 mt-2">
               <h2 class="text-dark mb-4 text-3xl font-bold">Najviše korišten motor</h2>
-              <h5 class="mb-0 text-lg font-medium text-neutral-500 dark:text-neutral-300">
+              <h5 class="mb-0 text-lg font-medium text-neutral-500 dark:text-neutral-700">
                 {{$proizvodjac}},
                 {{$model}}
               </h5>
